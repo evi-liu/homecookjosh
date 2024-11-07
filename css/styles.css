@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #FF385C;
+    --text-dark: #222222;
+    --text-light: #717171;
+    --bg-light: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,44 +13,388 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Figtree', sans-serif;
+    color: var(--text-dark);
+    background-color: #F7F7F7;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    padding: 1rem 5rem;
+    border-bottom: 1px solid #ebebeb;
+    background-color: #FFFFFF;
+    height: 80px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 1rem 0;
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: white;
+.host-link {
     text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
 }
 
-main {
-    padding: 2rem;
-    max-width: 800px;
+.host-link:hover {
+    background-color: #f7f7f7;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #dddddd;
+    border-radius: 21px;
+    background: white;
+    cursor: pointer;
+}
+
+/* Categories Section */
+.categories {
+    padding: 1.5rem 5rem;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.category-scroll {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text-light);
+    border-bottom: 2px solid transparent;
+}
+
+.category-item.active {
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--text-dark);
+}
+
+.category-item img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+}
+
+/* Recipe Grid */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 24px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
+.recipe-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    background-color: #FFFFFF;
+}
+
+.recipe-card:hover {
+    transform: translateY(-4px);
+}
+
+.recipe-image {
+    position: relative;
+    padding-bottom: 75%;
+}
+
+.recipe-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-info {
+    padding: 16px;
+    background: white;
+}
+
+.recipe-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+.recipe-type, .recipe-time {
+    color: #717171;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.recipe-rating {
+    margin-top: 8px;
+    color: #222;
+}
+
+.review-count {
+    color: #717171;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .recipe-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .recipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 footer {
-    background-color: #333;
+    background-color: transparent;
     color: white;
     text-align: center;
     padding: 1rem;
     position: fixed;
     bottom: 0;
     width: 100%;
-} 
+}
+
+/* Responsive Design - updated */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    // ... rest of responsive styles ...
+}
+
+/* Remove previous chef hat styles and add these pizza styles */
+.pizza {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+    animation: spin 20s linear infinite;
+}
+
+.pizza-base {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFC107;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 5px #CD9B04;
+    border: 3px solid #8B4513;
+    overflow: hidden;
+}
+
+.pepperoni {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #FF5252;
+    border-radius: 50%;
+    border: 1px solid #D32F2F;
+}
+
+.p1 { top: 30%; left: 30%; }
+.p2 { top: 30%; right: 30%; }
+.p3 { bottom: 30%; left: 50%; transform: translateX(-50%); }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Update logo styles */
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Add hover effect */
+.pizza:hover {
+    animation: spin 2s linear infinite;
+}
+
+.bowl-container {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+}
+
+.bowl {
+    position: absolute;
+    bottom: 0;
+    width: 32px;
+    height: 16px;
+    background: transparent;
+    border: 2px solid #FF385C;
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+}
+
+.liquid {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    background: #FF385C;
+    opacity: 0.9;
+}
+
+.wave {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 200%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: wave 2s infinite linear;
+}
+
+.steam-group {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 12px;
+}
+
+.steam {
+    position: absolute;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background: rgba(255, 56, 92, 0.5);
+    border-radius: 10px;
+    filter: blur(1px);
+}
+
+.steam-1 { 
+    left: 2px; 
+    animation: steam 2.5s infinite ease-out 0s; 
+}
+.steam-2 { 
+    left: 9px; 
+    animation: steam 2.5s infinite ease-out 0.4s; 
+}
+.steam-3 { 
+    left: 16px; 
+    animation: steam 2.5s infinite ease-out 0.8s; 
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes steam {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    40% {
+        height: 12px;
+        opacity: 0.5;
+    }
+    80% {
+        height: 14px;
+        opacity: 0;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+/* Keep existing styles and update spoon styles */
+.spoon {
+    position: absolute;
+    bottom: 4px;
+    right: 2px;
+    width: 3px;
+    height: 18px;
+    background: #ffffff;
+    border: 1px solid #FF385C;
+    border-radius: 3px;
+    transform: rotate(45deg);
+    transform-origin: bottom center;
+    z-index: 2;
+}
+
+.spoon:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border: 1px solid #FF385C;
+    border-radius: 50%;
+}
+
+/* Ensure bowl and liquid don't cover spoon */
+.bowl, .liquid {
+    z-index: 1;
+}
+
+.footer {
+    text-align: center;
+    padding: 24px;
+    margin-top: 40px;
+    border-top: 1px solid #ebebeb;
+    color: #FF385C;
+    font-size: 14px;
+    background: transparent;
+}
+
+.footer p {
+    margin: 0;
+}
+  

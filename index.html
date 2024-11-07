@@ -3,32 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Website</title>
+    <title>Homecook Josh</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-code-here.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="bowl-container">
+                    <div class="steam-group">
+                        <div class="steam steam-1"></div>
+                        <div class="steam steam-2"></div>
+                        <div class="steam steam-3"></div>
+                    </div>
+                    <div class="bowl">
+                        <div class="liquid">
+                            <div class="wave"></div>
+                        </div>
+                    </div>
+                </div>
+                <span>homecookjosh</span>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>Welcome to my website!</p>
+        <section class="categories">
+            <div class="category-scroll">
+                <button class="category-item active">
+                    <img src="https://via.placeholder.com/24" alt="All">
+                    <span>All Recipes</span>
+                </button>
+                <button class="category-item">
+                    <img src="https://via.placeholder.com/24" alt="Breakfast">
+                    <span>Breakfast</span>
+                </button>
+                <button class="category-item">
+                    <img src="https://via.placeholder.com/24" alt="Lunch">
+                    <span>Lunch</span>
+                </button>
+                <button class="category-item">
+                    <img src="https://via.placeholder.com/24" alt="Dinner">
+                    <span>Dinner</span>
+                </button>
+                <button class="category-item">
+                    <img src="https://via.placeholder.com/24" alt="Desserts">
+                    <span>Desserts</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="recipe-grid">
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://source.unsplash.com/800x600/?soup" alt="Homemade Soup">
+                </div>
+                <div class="recipe-info">
+                    <h3>Classic Chicken Soup</h3>
+                    <p class="recipe-type">Soup</p>
+                    <p class="recipe-time">45 minutes</p>
+                    <div class="recipe-rating">★ 4.9 <span class="review-count">(124)</span></div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://source.unsplash.com/800x600/?ramen" alt="Ramen">
+                </div>
+                <div class="recipe-info">
+                    <h3>Spicy Miso Ramen</h3>
+                    <p class="recipe-type">Noodles</p>
+                    <p class="recipe-time">1 hour</p>
+                    <div class="recipe-rating">★ 4.8 <span class="review-count">(98)</span></div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://source.unsplash.com/800x600/?stew" alt="Beef Stew">
+                </div>
+                <div class="recipe-info">
+                    <h3>Hearty Beef Stew</h3>
+                    <p class="recipe-type">Stew</p>
+                    <p class="recipe-time">2 hours</p>
+                    <div class="recipe-rating">★ 4.9 <span class="review-count">(156)</span></div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://source.unsplash.com/800x600/?chowder" alt="Chowder">
+                </div>
+                <div class="recipe-info">
+                    <h3>Creamy Corn Chowder</h3>
+                    <p class="recipe-type">Soup</p>
+                    <p class="recipe-time">40 minutes</p>
+                    <div class="recipe-rating">★ 4.7 <span class="review-count">(87)</span></div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://source.unsplash.com/800x600/?pho" alt="Pho">
+                </div>
+                <div class="recipe-info">
+                    <h3>Vietnamese Pho</h3>
+                    <p class="recipe-type">Soup</p>
+                    <p class="recipe-time">3 hours</p>
+                    <div class="recipe-rating">★ 4.9 <span class="review-count">(203)</span></div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://source.unsplash.com/800x600/?curry" alt="Curry">
+                </div>
+                <div class="recipe-info">
+                    <h3>Thai Coconut Curry</h3>
+                    <p class="recipe-type">Curry</p>
+                    <p class="recipe-time">35 minutes</p>
+                    <div class="recipe-rating">★ 4.8 <span class="review-count">(167)</span></div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://source.unsplash.com/800x600/?gumbo" alt="Gumbo">
+                </div>
+                <div class="recipe-info">
+                    <h3>Cajun Gumbo</h3>
+                    <p class="recipe-type">Stew</p>
+                    <p class="recipe-time">2.5 hours</p>
+                    <div class="recipe-rating">★ 4.9 <span class="review-count">(145)</span></div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://source.unsplash.com/800x600/?chili" alt="Chili">
+                </div>
+                <div class="recipe-info">
+                    <h3>Spicy Bean Chili</h3>
+                    <p class="recipe-type">Stew</p>
+                    <p class="recipe-time">1.5 hours</p>
+                    <div class="recipe-rating">★ 4.8 <span class="review-count">(178)</span></div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Your Name</p>
+    <!-- Add this after your recipe-grid section -->
+    <footer class="footer">
+        <p>made with ♥ by evi-liu</p>
     </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html> 
