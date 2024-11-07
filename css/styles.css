@@ -62,37 +62,50 @@ body {
 
 /* Categories Section */
 .categories {
-    padding: 1.5rem 5rem;
+    padding: 16px 24px;
     border-bottom: 1px solid #ebebeb;
 }
 
 .category-scroll {
     display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.category-scroll::-webkit-scrollbar {
-    display: none;
+    gap: 32px;
+    justify-content: center;
 }
 
 .category-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    gap: 8px;
+    padding: 12px 0;
     border: none;
     background: none;
     cursor: pointer;
-    color: var(--text-light);
-    border-bottom: 2px solid transparent;
+    color: #717171;
+    transition: all 0.2s ease;
+    min-width: 80px;
+}
+
+.material-icons {
+    font-size: 28px !important;
+    color: #717171;
 }
 
 .category-item.active {
-    color: var(--text-dark);
-    border-bottom: 2px solid var(--text-dark);
+    color: #FF385C;
+    border-bottom: 2px solid #FF385C;
+}
+
+.category-item.active .material-icons {
+    color: #FF385C;
+}
+
+.category-item:hover {
+    color: #FF385C;
+}
+
+.category-item:hover .material-icons {
+    color: #FF385C;
 }
 
 .category-item img {
@@ -117,6 +130,9 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s ease;
     background-color: #FFFFFF;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .recipe-card:hover {
