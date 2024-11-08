@@ -38,19 +38,23 @@
         .recipe-article {
             background: white;
             padding: 24px;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid black;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .recipe-title {
             font-size: 28px;
-            margin-bottom: 24px;
             font-weight: 800;
+            margin-bottom: 24px;
+            text-align: center;
         }
 
         .recipe-description {
-            margin-bottom: 24px;
+            font-size: 14px;
             line-height: 1.5;
+            margin-bottom: 24px;
+            text-align: center;
             color: #717171;
         }
 
@@ -59,15 +63,24 @@
             padding: 16px;
             margin: 24px 0;
             border-radius: 8px;
+            text-align: center;
         }
 
-        .time-item {
-            margin-bottom: 8px;
-            font-weight: 500;
+        .time-row {
+            margin-bottom: 4px;
         }
 
-        .time-item:last-child {
-            margin-bottom: 0;
+        .clock-icon {
+            margin-right: 4px;
+        }
+
+        .time-bar em {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .time-bar strong {
+            font-weight: 700;
         }
 
         .recipe-section {
@@ -75,32 +88,78 @@
         }
 
         .section-title {
-            margin-bottom: 16px;
-            font-size: 20px;
-            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .ingredients-list {
+            font-family: 'Source Serif Pro', serif;
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
         .ingredients-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            line-height: 1.4;
+            padding: 3px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .ingredients-list input[type="checkbox"] {
+            margin-top: 2px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .ingredients-list label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .ingredients-list em {
+            font-style: normal;
+            color: #717171;
         }
 
         .instructions-list {
-            padding-left: 24px;
-            margin: 0;
+            font-family: 'Source Serif Pro', serif;
+            padding-left: 0;
+            list-style: none;
+            counter-reset: instructions;
         }
 
         .instructions-list li {
+            position: relative;
+            padding-left: 40px;
             margin-bottom: 16px;
             line-height: 1.6;
-            padding-left: 8px;
+        }
+
+        .instructions-list li::before {
+            counter-increment: instructions;
+            content: counter(instructions);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .note {
+            color: #717171;
         }
 
         @media (max-width: 768px) {
@@ -118,6 +177,7 @@
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
@@ -131,23 +191,53 @@
             <p class="recipe-description">Recipe for Chinese BBQ pork that's perfectly cooked—with a sweet-savory glaze outside and tender, juicy meat inside.</p>
             
             <div class="time-bar">
-                <div class="time-item">PREP: 5 minutes</div>
-                <div class="time-item">COOK: 15 minutes</div>
-                <div class="time-item">TOTAL: 20 minutes</div>
+                <div class="time-row">
+                    <span class="clock-icon">⏱</span> <strong>PREP:</strong> <em>5 minutes</em> <strong>COOK:</strong> <em>15 minutes</em>
+                </div>
+                <div class="time-total">
+                    <strong>TOTAL:</strong> <em>20 minutes</em>
+                </div>
             </div>
 
             <section class="recipe-section">
                 <h2 class="section-title">INGREDIENTS</h2>
                 <ul class="ingredients-list">
-                    <li>2 pounds pork shoulder/pork butt (cut into long strips)</li>
-                    <li>2 tablespoons hoisin sauce</li>
-                    <li>2 tablespoons soy sauce</li>
-                    <li>2 tablespoons Chinese rice wine</li>
-                    <li>2 tablespoons honey</li>
-                    <li>4 cloves garlic (minced)</li>
-                    <li>2 teaspoons five spice powder</li>
-                    <li>1 teaspoon white pepper</li>
-                    <li>1 teaspoon sesame oil</li>
+                    <li>
+                        <input type="checkbox" id="ing1">
+                        <label for="ing1">2 pounds pork shoulder/pork butt <span class="note">(cut into long strips)</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing2">
+                        <label for="ing2">2 tablespoons hoisin sauce</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing3">
+                        <label for="ing3">2 tablespoons soy sauce</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing4">
+                        <label for="ing4">2 tablespoons Chinese rice wine</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing5">
+                        <label for="ing5">2 tablespoons honey</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing6">
+                        <label for="ing6">4 cloves garlic <span class="note">(minced)</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing7">
+                        <label for="ing7">2 teaspoons five spice powder</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing8">
+                        <label for="ing8">1 teaspoon white pepper</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing9">
+                        <label for="ing9">1 teaspoon sesame oil</label>
+                    </li>
                 </ul>
             </section>
 
