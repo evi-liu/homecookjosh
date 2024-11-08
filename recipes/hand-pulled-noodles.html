@@ -2,275 +2,293 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hand-pulled noodles</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Hand-pulled noodles Recipe - Homecook Josh</title>
     <style>
         body {
-            background-color: #f5f5f5;
             margin: 0;
-            padding: 20px;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
+            padding: 0;
+            background: #f7f7f7;
+            font-family: 'Figtree', sans-serif;
         }
 
-        .recipe-container {
-            position: relative;
-            width: fit-content;
-            margin-top: 16px;
+        main {
+            padding: 16px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .recipe-box {
-            width: 600px;
-            border: 1px solid black;
-            background: white;
-            position: relative;
-            padding: 30px;
-            margin-left: 45px;
-        }
-
-        .recipe-label {
+        .back-button {
             position: absolute;
-            top: -1px;
-            left: -44px;
-            background: #333;
-            color: white;
-            padding: 12px;
-            font-weight: 600;
-            font-size: 14px;
-            writing-mode: vertical-lr;
-            transform: rotate(180deg);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            height: auto;
+            top: 16px;
+            left: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid black;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-right: 1px solid #333;
-            padding-left: 13px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
         }
 
-        h1 {
-            font-size: 2.2em;
-            margin-top: 0;
-            font-weight: 700;
-            line-height: 1.2;
+        .back-button:hover {
+            background: #f5f5f5;
         }
 
-        h2 {
-            font-weight: 600;
-            font-size: 1.1em;
-            margin-top: 30px;
+        .recipe-article {
+            background: white;
+            padding: 24px;
+            border: 1px solid black;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        .description {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 20px;
+        .recipe-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .recipe-description {
+            font-size: 14px;
             line-height: 1.5;
-        }
-
-        .recipe-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px 0;
-            font-weight: 500;
-        }
-
-        .servings-number {
-            background: #2d7dd2;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 500;
+            margin-bottom: 24px;
+            text-align: center;
+            color: #717171;
         }
 
         .time-bar {
-            background: #faf5eb;
-            padding: 15px 30px;
-            margin: 20px -30px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            justify-content: center;
+            background: #fff1f1;
+            padding: 16px;
+            margin: 24px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        .time-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            justify-content: center;
+        .time-row {
+            margin-bottom: 4px;
         }
 
-        .time-label {
-            font-weight: 600;
+        .clock-icon {
+            margin-right: 4px;
+        }
+
+        .time-bar em {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .time-bar strong {
+            font-weight: 700;
+        }
+
+        .recipe-section {
+            margin-top: 32px;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 20px;
             text-transform: uppercase;
-        }
-
-        .time-icon {
-            margin-right: 5px;
-        }
-
-        .time-value {
-            font-style: italic;
+            letter-spacing: 0.5px;
         }
 
         .ingredients-list {
+            font-family: 'Source Serif Pro', serif;
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .ingredients-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
+            padding: 3px 0;
             display: flex;
-            gap: 10px;
             align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            line-height: 1.3;
         }
 
-        .ingredient-note {
-            color: #666;
-            font-style: italic;
-            font-weight: 400;
+        .ingredients-list input[type="checkbox"] {
+            margin-top: 2px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .ingredients-list label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .ingredients-list em {
+            font-style: normal;
+            color: #717171;
         }
 
         .instructions-list {
-            padding-left: 20px;
+            font-family: 'Source Serif Pro', serif;
+            padding-left: 0;
+            list-style: none;
+            counter-reset: instructions;
         }
 
         .instructions-list li {
-            margin-bottom: 15px;
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 16px;
             line-height: 1.6;
         }
 
-        .instructions-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        input[type="checkbox"] {
-            margin-top: 4px;
-        }
-
-        .back-nav {
-            text-decoration: none;
-            display: inline-flex;
+        .instructions-list li::before {
+            counter-increment: instructions;
+            content: counter(instructions);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            gap: 8px;
-            color: #717171;
+            justify-content: center;
             font-size: 14px;
-            font-weight: 500;
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid #dddddd;
-            border-radius: 24px;
-            transition: all 0.2s ease;
-            margin-bottom: 16px;
         }
 
-        .back-nav:hover {
-            background: #f7f7f7;
-            transform: scale(1.02);
+        .note {
+            color: #717171;
         }
 
-        .simple-bowl {
-            fill: #ff4e33;
+        @media (max-width: 768px) {
+            main {
+                padding: 16px;
+            }
+
+            .recipe-article {
+                padding: 16px;
+            }
+
+            .recipe-title {
+                font-size: 24px;
+            }
+
+            .back-button {
+                top: 12px;
+                left: 12px;
+            }
+
+            .recipe-header {
+                margin-top: 24px;
+            }
         }
 
-        .page-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 24px 24px 24px;
+        .recipe-header {
+            text-align: center;
+            margin-bottom: 24px;
+            margin-top: 24px;
+        }
+
+        .recipe-title {
+            font-size: 24px;
+            line-height: 1.2;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="page-container">
-        <a href="/?category=chinese" class="back-nav">
-            ← Back to Chinese Recipes
-        </a>
+    <main>
+        <article class="recipe-article">
+            <a href="../.." class="back-button">
+                ←
+            </a>
+            
+            <div class="recipe-header">
+                <h1 class="recipe-title">HAND-PULLED NOODLES<br>(YOU PO MIAN)</h1>
+            </div>
 
-        <div class="recipe-container">
-            <div class="recipe-box">
-                <div class="recipe-label">RECIPE</div>
-                
-                <h1>HAND-PULLED NOODLES</h1>
-                
-                <p class="description">Our recipe for Chinese BBQ pork that's perfectly cooked—with a sweet-savory glaze and tender, juicy meat inside.</p>
-                
-                <div class="recipe-meta">
-                    <span>by: The Woks of Life</span>
-                    <div>SERVES: <span class="servings-number">6</span></div>
+            <p class="recipe-description">These 15-Minute Chinese Hot Oil Noodles are beyond easy to make. Here’s the basic gist: You boil some noodles and veggies in the same pot, throw them in a bowl with some seasonings,  pour a couple tablespoons of hot oil over everything, and mix!</p>
+            
+            <div class="time-bar">
+                <div class="time-row">
+                    <span class="clock-icon">⏱</span> <strong>PREP:</strong> <em>5 minutes</em> <strong>COOK:</strong> <em>10 minutes</em>
                 </div>
-
-                <div class="time-bar">
-                    <div class="time-item">
-                        <span class="time-icon">⏱</span>
-                        <span class="time-label">PREP:</span>
-                        <span class="time-value">5 minutes</span>
-                    </div>
-                    <div class="time-item">
-                        <span class="time-label">COOK:</span>
-                        <span class="time-value">15 minutes</span>
-                    </div>
-                    <div class="time-item">
-                        <span class="time-label">TOTAL:</span>
-                        <span class="time-value">20 minutes</span>
-                    </div>
+                <div class="time-total">
+                    <strong>TOTAL:</strong> <em>15 minutes</em>
                 </div>
+            </div>
 
-                <h2>INGREDIENTS</h2>
+            <section class="recipe-section">
+                <h2 class="section-title">INGREDIENTS</h2>
                 <ul class="ingredients-list">
                     <li>
-                        <input type="checkbox">
-                        3 pounds pork shoulder/pork butt <span class="ingredient-note">(cut into long strips)</span>
+                        <input type="checkbox" id="ing1">
+                        <label for="ing1">4 oz. dried wheat noodles</label>
                     </li>
                     <li>
-                        <input type="checkbox">
-                        ¼ cup hoisin sauce
+                        <input type="checkbox" id="ing2">
+                        <label for="ing2">A handful of leafy greens <span class="note">(choy sum, spinach, or baby bok choy)</span></label>
                     </li>
                     <li>
-                        <input type="checkbox">
-                        ¼ cup soy sauce
+                        <input type="checkbox" id="ing3">
+                        <label for="ing3">1 teaspoon light soy sauce</label>
                     </li>
                     <li>
-                        <input type="checkbox">
-                        ¼ cup Chinese rice wine
+                        <input type="checkbox" id="ing4">
+                        <label for="ing4">1 teaspoon dark soy sauce</label>
                     </li>
                     <li>
-                        <input type="checkbox">
-                        ⅓ cup honey
+                        <input type="checkbox" id="ing5">
+                        <label for="ing5">1/2 teaspoon Chinese black vinegar</label>
                     </li>
                     <li>
-                        <input type="checkbox">
-                        3 cloves garlic (minced)
+                        <input type="checkbox" id="ing6">
+                        <label for="ing6">Crushed red pepper flakes <span class="note">(to taste)</span></label>
                     </li>
                     <li>
-                        <input type="checkbox">
-                        2 tablespoons five spice powder
+                        <input type="checkbox" id="ing7">
+                        <label for="ing7">Salt <span class="note">(to taste)</span></label>
                     </li>
                     <li>
-                        <input type="checkbox">
-                        1 tablespoon white pepper
+                        <input type="checkbox" id="ing8">
+                        <label for="ing8">Chopped scallion</label>
                     </li>
                     <li>
-                        <input type="checkbox">
-                        1 teaspoon sesame oil
+                        <input type="checkbox" id="ing9">
+                        <label for="ing9">Chopped cilantro</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing10">
+                        <label for="ing10">2 cloves garlic <span class="note">(minced)</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing11">
+                        <label for="ing11">2 1/2 tablespoons oil</label>
                     </li>
                 </ul>
+            </section>
 
-                <h2>INSTRUCTIONS</h2>
+            <section class="recipe-section">
+                <h2 class="section-title">INSTRUCTIONS</h2>
                 <ol class="instructions-list">
-                    <li>Cut the pork into long strips or chunks about 3 inches thick. Place in a large bowl.</li>
-                    <li>Combine all marinade ingredients in a bowl and mix well. Pour over the pork and massage into the meat.</li>
-                    <li>Cover and refrigerate overnight, or at least 8 hours.</li>
-                    <li>Preheat your oven to 375°F (190°C). Line a roasting pan with foil and place a wire rack on top.</li>
-                    <li>Place the pork on the rack, reserving the marinade. Roast for 25 minutes.</li>
+                    <li>Boil the noodles according to package directions until al dente. In the same pot, blanch the leafy greens until cooked through. Drain.</li>
+                    <li>Add the cooked noodles and greens to a heatproof bowl, along with the light soy sauce, dark soy sauce, vinegar, crushed red pepper flakes, salt, scallion, cilantro, and minced garlic.</li>
+                    <li>In a small pot, heat the oil until shimmering. Carefully pour the hot oil over the bowl of noodles, and mix everything together. Serve!</li>
                 </ol>
-            </div>
-        </div>
-    </div>
+            </section>
+        </article>
+    </main>
 </body>
 </html> 

@@ -3,18 +3,14 @@ const CHINESE_RECIPES = [
         title: "Char Siu (Chinese BBQ Pork)",
         image: "./images/char-siu.jpg",
         url: "./recipes/char-siu.html",
-        time: "2 hours",
-        rating: 4.9,
-        reviews: 486,
+        time: "2 hours | Overnight",
         type: "Chinese"
     },
     {
         title: "Hand-Pulled Noodles",
-        image: "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43",
+        image: "./images/hand-pulled-noodles.jpg",
         url: "./recipes/hand-pulled-noodles.html",
-        time: "2 hours",
-        rating: 4.8,
-        reviews: 356,
+        time: "15 minutes",
         type: "Chinese"
     },
     {
@@ -22,8 +18,6 @@ const CHINESE_RECIPES = [
         image: "https://images.unsplash.com/photo-1590929713992-005e2eeea04a",
         url: "./recipes/scallion-pancakes.html",
         time: "45 minutes",
-        rating: 4.9,
-        reviews: 428,
         type: "Chinese"
     },
     {
@@ -31,8 +25,6 @@ const CHINESE_RECIPES = [
         image: "https://images.unsplash.com/photo-1617093727343-374698b1b08d",
         url: "./recipes/mapo-tofu.html",
         time: "30 minutes",
-        rating: 4.8,
-        reviews: 392,
         type: "Chinese"
     },
     {
@@ -40,8 +32,6 @@ const CHINESE_RECIPES = [
         image: "https://images.unsplash.com/photo-1617093727343-374698b1b08d",
         url: "./recipes/dan-dan-noodles.html",
         time: "40 minutes",
-        rating: 4.9,
-        reviews: 445,
         type: "Chinese"
     },
     {
@@ -49,8 +39,6 @@ const CHINESE_RECIPES = [
         image: "./images/char-siu.jpg",
         url: "./recipes/braised-pork-belly.html",
         time: "2 hours",
-        rating: 4.9,
-        reviews: 378,
         type: "Chinese"
     },
     {
@@ -58,8 +46,6 @@ const CHINESE_RECIPES = [
         image: "https://images.unsplash.com/photo-1625944525533-473f1a3d54e7",
         url: "./recipes/sichuan-dry-fried-green-beans.html",
         time: "30 minutes",
-        rating: 4.8,
-        reviews: 334,
         type: "Chinese"
     },
     {
@@ -67,8 +53,6 @@ const CHINESE_RECIPES = [
         image: "https://images.unsplash.com/photo-1626509653291-c51a8ee8c4a9",
         url: "./recipes/congee.html",
         time: "30 minutes",
-        rating: 4.7,
-        reviews: 312,
         type: "Chinese"
     }
 ];
