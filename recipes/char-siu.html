@@ -18,29 +18,32 @@
             margin: 0 auto;
         }
 
-        .back-nav {
-            display: inline-block;
-            margin-bottom: 16px;
-            color: #717171;
-            text-decoration: none;
-            padding: 8px 16px;
+        .back-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             background: white;
-            border: 1px solid #dddddd;
-            border-radius: 24px;
-            transition: all 0.2s ease;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-bottom: 16px;
+            text-decoration: none;
+            color: black;
         }
 
-        .back-nav:hover {
-            background: #f7f7f7;
-            transform: scale(1.02);
+        .back-button:hover {
+            background: #f5f5f5;
         }
 
         .recipe-article {
             background: white;
             padding: 24px;
             border: 1px solid black;
-            border-radius: 0;
-            box-shadow: none;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .recipe-title {
@@ -62,8 +65,9 @@
             background: #fff1f1;
             padding: 16px;
             margin: 24px 0;
-            border-radius: 8px;
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .time-row {
@@ -175,19 +179,33 @@
                 font-size: 24px;
             }
         }
+
+        .recipe-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .recipe-title {
+            font-size: 24px;
+            line-height: 1.2;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
-        <a href="/?category=chinese" class="back-nav">
-            ← Back to Chinese Recipes
+        <a href="/?category=chinese" class="back-button">
+            ←
         </a>
 
         <article class="recipe-article">
-            <h1 class="recipe-title">CHAR SIU</h1>
-            
+            <div class="recipe-header">
+                <h1 class="recipe-title">CHAR SIU<br>(CHINESE BBQ PORK)</h1>
+            </div>
+
             <p class="recipe-description">Recipe for Chinese BBQ pork that's perfectly cooked—with a sweet-savory glaze outside and tender, juicy meat inside.</p>
             
             <div class="time-bar">
