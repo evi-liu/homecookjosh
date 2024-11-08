@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Char Siu Recipe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .recipe-container {
+            position: relative;
+            width: fit-content;
+        }
+
+        .recipe-box {
+            width: 600px;
+            border: 1px solid black;
+            background: white;
+            position: relative;
+            padding: 30px;
+            margin-left: 45px;
+        }
+
+        .recipe-label {
+            position: absolute;
+            top: -1px;
+            left: -44px;
+            background: #333;
+            color: white;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #333;
+            padding-left: 13px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-top: 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 30px;
+        }
+
+        .description {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .servings-number {
+            background: #2d7dd2;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .time-bar {
+            background: #faf5eb;
+            padding: 15px 30px;
+            margin: 20px -30px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .time-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .time-label {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .time-icon {
+            margin-right: 5px;
+        }
+
+        .time-value {
+            font-style: italic;
+        }
+
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ingredients-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .ingredient-note {
+            color: #666;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .instructions-list {
+            padding-left: 20px;
+        }
+
+        .instructions-list li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .instructions-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="recipe-container">
+        <div class="recipe-box">
+            <div class="recipe-label">RECIPE</div>
+            
+            <h1>CHAR SIU</h1>
+            
+            <p class="description">Our recipe for Chinese BBQ pork that's perfectly cooked—with a sweet-savory glaze and tender, juicy meat inside.</p>
+            
+            <div class="recipe-meta">
+                <span>by: The Woks of Life</span>
+                <div>SERVES: <span class="servings-number">6</span></div>
+            </div>
+
+            <div class="time-bar">
+                <div class="time-item">
+                    <span class="time-icon">⏱</span>
+                    <span class="time-label">PREP:</span>
+                    <span class="time-value">5 minutes</span>
+                </div>
+                <div class="time-item">
+                    <span class="time-label">COOK:</span>
+                    <span class="time-value">15 minutes</span>
+                </div>
+                <div class="time-item">
+                    <span class="time-label">TOTAL:</span>
+                    <span class="time-value">20 minutes</span>
+                </div>
+            </div>
+
+            <h2>INGREDIENTS</h2>
+            <ul class="ingredients-list">
+                <li>
+                    <input type="checkbox">
+                    3 pounds pork shoulder/pork butt <span class="ingredient-note">(cut into long strips)</span>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    ¼ cup hoisin sauce
+                </li>
+                <li>
+                    <input type="checkbox">
+                    ¼ cup soy sauce
+                </li>
+                <li>
+                    <input type="checkbox">
+                    ¼ cup Chinese rice wine
+                </li>
+                <li>
+                    <input type="checkbox">
+                    ⅓ cup honey
+                </li>
+                <li>
+                    <input type="checkbox">
+                    3 cloves garlic (minced)
+                </li>
+                <li>
+                    <input type="checkbox">
+                    2 tablespoons five spice powder
+                </li>
+                <li>
+                    <input type="checkbox">
+                    1 tablespoon white pepper
+                </li>
+                <li>
+                    <input type="checkbox">
+                    1 teaspoon sesame oil
+                </li>
+            </ul>
+
+            <h2>INSTRUCTIONS</h2>
+            <ol class="instructions-list">
+                <li>Cut the pork into long strips or chunks about 3 inches thick. Place in a large bowl.</li>
+                <li>Combine all marinade ingredients in a bowl and mix well. Pour over the pork and massage into the meat.</li>
+                <li>Cover and refrigerate overnight, or at least 8 hours.</li>
+                <li>Preheat your oven to 375°F (190°C). Line a roasting pan with foil and place a wire rack on top.</li>
+                <li>Place the pork on the rack, reserving the marinade. Roast for 25 minutes.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html> 
