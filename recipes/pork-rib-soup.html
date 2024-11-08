@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Taiwanese Pork Rib Soup Recipe - Homecook Josh</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            font-family: 'Figtree', sans-serif;
+        }
+
+        main {
+            padding: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .back-button:hover {
+            background: #f5f5f5;
+        }
+
+        .recipe-article {
+            background: white;
+            padding: 24px;
+            border: 1px solid black;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .recipe-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .recipe-description {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            text-align: center;
+            color: #717171;
+        }
+
+        .time-bar {
+            background: #fff1f1;
+            padding: 16px;
+            margin: 24px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .time-row {
+            margin-bottom: 4px;
+        }
+
+        .clock-icon {
+            margin-right: 4px;
+        }
+
+        .time-bar em {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .time-bar strong {
+            font-weight: 700;
+        }
+
+        .recipe-section {
+            margin-top: 32px;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .ingredients-list {
+            font-family: 'Source Serif Pro', serif;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ingredients-list li {
+            padding: 3px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .ingredients-list input[type="checkbox"] {
+            margin-top: 2px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .ingredients-list label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .ingredients-list em {
+            font-style: normal;
+            color: #717171;
+        }
+
+        .instructions-list {
+            font-family: 'Source Serif Pro', serif;
+            padding-left: 0;
+            list-style: none;
+            counter-reset: instructions;
+        }
+
+        .instructions-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .instructions-list li::before {
+            counter-increment: instructions;
+            content: counter(instructions);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .note {
+            color: #717171;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 16px;
+            }
+
+            .recipe-article {
+                padding: 16px;
+            }
+
+            .recipe-title {
+                font-size: 24px;
+            }
+
+            .back-button {
+                top: 12px;
+                left: 12px;
+            }
+
+            .recipe-header {
+                margin-top: 24px;
+            }
+        }
+
+        .recipe-header {
+            text-align: center;
+            margin-bottom: 24px;
+            margin-top: 24px;
+        }
+
+        .recipe-title {
+            font-size: 24px;
+            line-height: 1.2;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <article class="recipe-article">
+            <a href="../.." class="back-button">
+                ←
+            </a>
+            
+            <div class="recipe-header">
+                <h1 class="recipe-title">TAIWANESE PORK RIB SOUP</h1>
+            </div>
+
+            <p class="recipe-description">Daikon Soup is one of the staple soups in most Taiwanese home cooked meals.  Probably because it's simple to make and daikon radish is a common Asian vegetable, plus you can also use less expensive cuts of pork bones to simmer for the broth.</p>
+            
+            <div class="time-bar">
+                <div class="time-row">
+                    <span class="clock-icon">⏱</span> <strong>PREP:</strong> <em>5 minutes</em> <strong>COOK:</strong> <em>45 minutes</em>
+                </div>
+                <div class="time-total">
+                    <strong>TOTAL:</strong> <em>50 minutes</em>
+                </div>
+            </div>
+
+            <section class="recipe-section">
+                <h2 class="section-title">INGREDIENTS</h2>
+                <ul class="ingredients-list">
+                    <li>
+                        <input type="checkbox" id="ing1">
+                        <label for="ing1">1.5 lbs. pork spare ribs</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing2">
+                        <label for="ing2">1.5 lbs. daikon radish, <span class="note">peeled and cut into chunks</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing3">
+                        <label for="ing3">1 garlic clove, <span class="note">smashed</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing4">
+                        <label for="ing4">6 - 8 cups of filtered water <span class="note">(or enough to cover the ingredients)</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing5">
+                        <label for="ing5">Salt <span class="note">(to taste)</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing6">
+                        <label for="ing6">Cilantro <span class="note">(optional, for garnish)</span></label>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h2 class="section-title">INSTRUCTIONS</h2>
+                <ol class="instructions-list">
+                    <li>Blanch the pork bones by boiling in water for a few minutes, then discard the water.</li>
+                    
+                    <li>In a clean pot, bring the pork, daikon, garlic and water to a boil and cook for 30-45 minutes or until the daikon is soft.</li>
+                    
+                    <li>Add salt to taste and optional cilantro for garnish.</li>
+                </ol>
+            </section>
+        </article>
+    </main>
+</body>
+</html> 

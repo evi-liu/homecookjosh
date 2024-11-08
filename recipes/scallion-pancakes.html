@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Scallion pancakes Recipe - Homecook Josh</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            font-family: 'Figtree', sans-serif;
+        }
+
+        main {
+            padding: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .back-button:hover {
+            background: #f5f5f5;
+        }
+
+        .recipe-article {
+            background: white;
+            padding: 24px;
+            border: 1px solid black;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .recipe-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .recipe-description {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            text-align: center;
+            color: #717171;
+        }
+
+        .time-bar {
+            background: #fff1f1;
+            padding: 16px;
+            margin: 24px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .time-row {
+            margin-bottom: 4px;
+        }
+
+        .clock-icon {
+            margin-right: 4px;
+        }
+
+        .time-bar em {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .time-bar strong {
+            font-weight: 700;
+        }
+
+        .recipe-section {
+            margin-top: 32px;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .ingredients-list {
+            font-family: 'Source Serif Pro', serif;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ingredients-list li {
+            padding: 3px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .ingredients-list input[type="checkbox"] {
+            margin-top: 2px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .ingredients-list label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .ingredients-list em {
+            font-style: normal;
+            color: #717171;
+        }
+
+        .instructions-list {
+            font-family: 'Source Serif Pro', serif;
+            padding-left: 0;
+            list-style: none;
+            counter-reset: instructions;
+        }
+
+        .instructions-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .instructions-list li::before {
+            counter-increment: instructions;
+            content: counter(instructions);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .note {
+            color: #717171;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 16px;
+            }
+
+            .recipe-article {
+                padding: 16px;
+            }
+
+            .recipe-title {
+                font-size: 24px;
+            }
+
+            .back-button {
+                top: 12px;
+                left: 12px;
+            }
+
+            .recipe-header {
+                margin-top: 24px;
+            }
+        }
+
+        .recipe-header {
+            text-align: center;
+            margin-bottom: 24px;
+            margin-top: 24px;
+        }
+
+        .recipe-title {
+            font-size: 24px;
+            line-height: 1.2;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <article class="recipe-article">
+            <a href="../.." class="back-button">
+                ←
+            </a>
+            
+            <div class="recipe-header">
+                <h1 class="recipe-title">SCALLION PANCAKES</h1>
+            </div>
+
+            <p class="recipe-description">Scallion pancakes are a classic Chinese appetizer that are made with a simple batter of flour, water, and scallions. They are then pan-fried until golden and crispy on the outside, with a soft and fluffy texture on the inside.</p>
+            
+            <div class="time-bar">
+                <div class="time-row">
+                    <span class="clock-icon">⏱</span> <strong>PREP:</strong> <em>1 hr</em> <strong>COOK:</strong> <em>10 minutes</em>
+                </div>
+                <div class="time-total">
+                    <strong>TOTAL:</strong> <em>1 hr 10 min</em>
+                </div>
+            </div>
+
+            <section class="recipe-section">
+                <h2 class="section-title">INGREDIENTS</h2>
+                <ul class="ingredients-list">
+                    <li>
+                        <input type="checkbox" id="ing1">
+                        <label for="ing1">2 cups flour</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing2">
+                        <label for="ing2">1 teaspoon salt</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing3">
+                        <label for="ing3">1 tablespoon oil</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing4">
+                        <label for="ing4">1 cup warm water</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing5">
+                        <label for="ing5">4 green onions</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing6">
+                        <label for="ing6">½ cup oil</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing7">
+                        <label for="ing7">2 tablespoons flour</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ing8">
+                        <label for="ing8">Salt</label>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h2 class="section-title">INSTRUCTIONS</h2>
+                <ol class="instructions-list">
+                    <li>In a bowl, add 2 cups of flour, 1 teaspoon of salt, and 1 tablespoon of oil. Mix well and pour in 1 cup of warm water while stirring with chopsticks. Once the dough becomes flakey, keep kneading until it forms a smooth ball. Drizzle oil on top of the dough and let it rest for 20 minutes.</li>
+                    
+                    <li>Chop up 4 stalks of green onion and heat ½ cup of oil. In a small bowl, add 2 tablespoons of flour and chopped green onion. Once the oil is hot, pour it into the small bowl to fragrant the green onion. Mix until everything is combined.</li>
+                    
+                    <li>Roll the dough and cut it into 4 pieces. Roll out each piece to a thin rectangle. Sprinkle salt and roll it into the dough.</li>
+                    
+                    <li>Spread the oil and flour mixture all over the dough (about 3-4 tablespoons), ensuring every part is covered.</li>
+                    
+                    <li>Roll the dough from the top down to the middle, then repeat by rolling from the bottom to the middle. Try to roll as tightly as possible.</li>
+                    
+                    <li>Roll the dough from top to bottom to form one piece. Twist the dough from both sides until it forms a ball. Press it down and let it rest for 10 minutes.</li>
+                    
+                    <li>After resting, lightly roll the pancake out. In a pan, drizzle oil and heat to medium-high. Add the pancake, cover with a lid, and cook for 5 minutes.</li>
+                    
+                    <li>Flip and pan-fry the other side for another 2 minutes or until golden brown. Scrunch the pancake before serving.</li>
+                </ol>
+            </section>
+        </article>
+    </main>
+</body>
+</html> 
