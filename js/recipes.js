@@ -84,7 +84,7 @@ function displayRecipes(recipes) {
                 <div class="recipe-info">
                     <div class="recipe-type">${recipe.title}</div>
                     <div class="recipe-time">${recipe.time}</div>
-                    <div class="recipe-rating">★ ${recipe.rating} <span class="review-count">(${recipe.reviews})</span></div>
+                    <!-- <div class="recipe-rating">★ ${recipe.rating} <span class="review-count">(${recipe.reviews})</span></div> -->
                 </div>
             </a>
         `;
