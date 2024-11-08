@@ -1,7 +1,7 @@
 const CHINESE_RECIPES = [
     {
         title: "Char Siu (Chinese BBQ Pork)",
-        image: "https://images.unsplash.com/photo-1582476693846-a77c96a69112",
+        image: "./images/char-siu.jpg",
         url: "./recipes/char-siu.html",
         time: "2 hours",
         rating: 4.9,
@@ -46,7 +46,7 @@ const CHINESE_RECIPES = [
     },
     {
         title: "Braised Pork Belly (Hong Shao Rou)",
-        image: "https://images.unsplash.com/photo-1582476693846-a77c96a69112",
+        image: "./images/char-siu.jpg",
         url: "./recipes/braised-pork-belly.html",
         time: "2 hours",
         rating: 4.9,
@@ -79,14 +79,11 @@ function displayRecipes(recipes) {
 
     recipes.forEach(recipe => {
         const recipeCard = `
-            <a href="${recipe.url}" target="_blank" class="recipe-card">
-                <div class="recipe-image">
-                    <img src="${recipe.image}" alt="${recipe.title}">
-                </div>
+            <a href="${recipe.url}" class="recipe-card">
+                <img src="${recipe.image}" alt="${recipe.title}">
                 <div class="recipe-info">
-                    <h3>${recipe.title}</h3>
-                    <p class="recipe-type">${recipe.type}</p>
-                    <p class="recipe-time">${recipe.time}</p>
+                    <div class="recipe-type">${recipe.type}</div>
+                    <div class="recipe-time">${recipe.time}</div>
                     <div class="recipe-rating">★ ${recipe.rating} <span class="review-count">(${recipe.reviews})</span></div>
                 </div>
             </a>
@@ -98,6 +95,9 @@ function displayRecipes(recipes) {
 document.addEventListener('DOMContentLoaded', () => {
     const categoryButtons = document.querySelectorAll('.category-item');
     
+    // Load Chinese recipes by default
+    displayRecipes(CHINESE_RECIPES);
+
     categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
             categoryButtons.forEach(btn => btn.classList.remove('active'));
@@ -113,7 +113,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Load Chinese recipes initially
-    displayRecipes(CHINESE_RECIPES);
 }); 

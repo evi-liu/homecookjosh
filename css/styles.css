@@ -15,7 +15,7 @@
 body {
     font-family: 'Figtree', sans-serif;
     color: var(--text-dark);
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 20px;
 }
@@ -27,6 +27,8 @@ body {
     border-bottom: 1px solid #ebebeb;
     background-color: #FFFFFF;
     height: 80px;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .logo {
@@ -62,50 +64,74 @@ body {
 
 /* Categories Section */
 .categories {
-    padding: 16px 24px;
+    padding: 12px 16px;
     border-bottom: 1px solid #ebebeb;
+    background: #f7f7f7;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 72px;
+    overflow-y: hidden;
 }
 
 .category-scroll {
     display: flex;
-    gap: 32px;
-    justify-content: center;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: 100%;
+    align-items: center;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 .category-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    padding: 12px 0;
+    justify-content: center;
     border: none;
     background: none;
     cursor: pointer;
+    min-width: fit-content;
     color: #717171;
-    transition: all 0.2s ease;
-    min-width: 80px;
+    font-size: 11px;
+    font-weight: 600;
+    height: 48px;
+    padding: 0;
+    position: relative;
+    gap: 4px;
 }
 
-.material-icons {
-    font-size: 28px !important;
-    color: #717171;
+.category-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #222222;
+    border: none;
+}
+
+.category-item .material-icons {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 
 .category-item.active {
-    color: #FF385C;
-    border-bottom: 2px solid #FF385C;
-}
-
-.category-item.active .material-icons {
-    color: #FF385C;
+    color: #222222;
 }
 
 .category-item:hover {
-    color: #FF385C;
-}
-
-.category-item:hover .material-icons {
-    color: #FF385C;
+    color: #222222;
 }
 
 .category-item img {
@@ -119,57 +145,49 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    padding: 24px;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 24px 16px;
 }
 
 .recipe-card {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-    background-color: #FFFFFF;
-    cursor: pointer;
+    display: block;
     text-decoration: none;
     color: inherit;
+    transition: transform 0.2s;
 }
 
 .recipe-card:hover {
-    transform: translateY(-4px);
+    transform: scale(1.02);
 }
 
-.recipe-image {
-    position: relative;
-    padding-bottom: 75%;
-}
-
-.recipe-image img {
-    position: absolute;
+.recipe-card img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1/0.9;
     object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    margin-bottom: 12px;
 }
 
 .recipe-info {
-    padding: 16px;
-    background: white;
+    padding: 0;
 }
 
-.recipe-info h3 {
-    margin: 0 0 8px 0;
-    font-size: 18px;
+.recipe-type {
+    font-size: 15px;
+    color: #222222;
+    font-weight: 500;
+    margin-bottom: 4px;
 }
 
-.recipe-type, .recipe-time {
+.recipe-time {
+    font-size: 15px;
     color: #717171;
-    font-size: 14px;
-    margin: 4px 0;
+    margin-bottom: 4px;
 }
 
 .recipe-rating {
-    margin-top: 8px;
-    color: #222;
+    font-size: 15px;
+    color: #222222;
 }
 
 .review-count {
@@ -1319,6 +1337,31 @@ main {
 
     .recipe-title {
         font-size: 24px;
+    }
+}
+
+/* Add responsive breakpoints like Airbnb */
+@media (max-width: 1440px) {
+    .recipe-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1128px) {
+    .recipe-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 950px) {
+    .recipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;
     }
 }
   
