@@ -19,8 +19,11 @@
         }
 
         .back-button {
-            width: 40px;
-            height: 40px;
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: white;
             border: 1px solid black;
@@ -28,9 +31,9 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            margin-bottom: 16px;
             text-decoration: none;
             color: black;
+            font-size: 18px;
         }
 
         .back-button:hover {
@@ -178,11 +181,21 @@
             .recipe-title {
                 font-size: 24px;
             }
+
+            .back-button {
+                top: 12px;
+                left: 12px;
+            }
+
+            .recipe-header {
+                margin-top: 24px;
+            }
         }
 
         .recipe-header {
             text-align: center;
             margin-bottom: 24px;
+            margin-top: 24px;
         }
 
         .recipe-title {
@@ -197,11 +210,11 @@
 </head>
 <body>
     <main>
-        <a href="/?category=chinese" class="back-button">
-            ←
-        </a>
-
         <article class="recipe-article">
+            <a href="/?category=chinese" class="back-button">
+                ←
+            </a>
+            
             <div class="recipe-header">
                 <h1 class="recipe-title">CHAR SIU<br>(CHINESE BBQ PORK)</h1>
             </div>
