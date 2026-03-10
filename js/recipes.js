@@ -1,3 +1,13 @@
+const JAPANESE_RECIPES = [
+    {
+        title: "Traditional Miso-Glazed Cod (Gindara Saikyo-yaki)",
+        image: "https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=800&auto=format&fit=crop",
+        url: "./recipes/miso-cod.html",
+        time: "30 min | Overnight",
+        type: "Japanese"
+    }
+];
+
 const CHINESE_RECIPES = [
     {
         title: "Hand-Pulled Noodles",
@@ -63,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (cuisine === 'Chinese') {
                 displayRecipes(CHINESE_RECIPES);
+            } else if (cuisine === 'Japanese') {
+                displayRecipes(JAPANESE_RECIPES);
             } else {
                 const recipeGrid = document.querySelector('.recipe-grid');
                 recipeGrid.innerHTML = '<div class="message">Coming soon!</div>';
